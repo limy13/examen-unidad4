@@ -91,6 +91,7 @@ public class Menu {
             switch(decision) {
 
                 case 1:
+                //hacer metodo para que despues de llenos todos los griupos, ya no pueda agregar mas alumnos
                     break;
 
                 case 2:

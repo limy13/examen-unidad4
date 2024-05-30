@@ -78,6 +78,10 @@ public abstract class Usuario {
 
     public void setRol(Rol rol) {this.rol = rol;}
 
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
     public static String generarNumeroControl(char letraNombre, Rol rol) { 
 
         //este metodo genera el numero de control para cualquier profe, alumno, coordinador
