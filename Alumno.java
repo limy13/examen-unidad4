@@ -71,6 +71,7 @@ public class Alumno extends Usuario {
         String nombreUsuario = datosComun.get(7);
         String contrasena = datosComun.get(8);
         String numeroControl = datosComun.get(9);
+        Semestre semestre = new Semestre(1, Sistema.carrera);
         //metodo asignar materias
 
         Alumno alumno = new Alumno(nombre, apellidos, Integer.parseInt(fechaNacimiento[2]), ciudad, estado, curp, direccion, numeroControl, new Semestre(1, null), null, 0, null, nombreUsuario, contrasena, Sistema.carrera);

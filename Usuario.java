@@ -146,27 +146,20 @@ public abstract class Usuario {
             System.out.print("Ingresa el nombre de usuario: ");
             nombreUsuario = scanner.nextLine();
             nombreUsuarioExistente = false;
-            for (ArrayList<Alumno> alumnosList : Sistema.alumnos.values()) {
-                for (Usuario alumno : alumnosList) {
-                    if (alumno.getNombreUsuario().equals(nombreUsuario)) {
-                        nombreUsuarioExistente = true;
-                        break;
+            for(Map<Rol, ArrayList<Usuario>> usuariosList : Sistema.usuarios.values()) {
+                for(ArrayList<Usuario> usuarios : usuariosList.values()) {
+                    for(Usuario usuario : usuarios) {
+                        if(usuario.getNombreUsuario().equals(nombreUsuario)) {
+                            nombreUsuarioExistente = true;
+                            System.out.println("\nEste nombre de usuario ya ha sido registrado, por favor ingrese uno diferente");
+                            break;
+                        }
                     }
+
                 }
             }
-            for (Profesor profesor : Sistema.profesores) {
-                if (profesor.getNombreUsuario().equals(nombreUsuario)) {
-                    nombreUsuarioExistente = true;
-                    break;
-                }
-            }
-            for (Coordinador coordinador : Sistema.coordinadores) {
-                if (coordinador.getNombreUsuario().equals(nombreUsuario)) {
-                    nombreUsuarioExistente = true;
-                    break;
-                }
-            }
-        } while (nombreUsuarioExistente);
+        } 
+        while (nombreUsuarioExistente);
         return nombreUsuario;
     }
 
